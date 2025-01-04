@@ -10,6 +10,7 @@ The project is an example of infrastructure for automation testing of different 
 Prerequisites:
 1. Install Grafana from the following website: https://grafana.com/grafana/download/8.3.3?platform=windows&edition=oss
 2. Install Allure report from the following website: https://allurereport.org/docs/install-for-windows/
+3. Create Applitools account: https://auth.applitools.com/users/login
 
 To run the project, do the following:
 1. Run this command in the terminal: pip install -r requirements.txt
