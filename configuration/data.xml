@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Environment>
+    <!-- General -->
+    <WaitTime>10</WaitTime>
+    <ScreenShotPath>../allure-screen-shots/</ScreenShotPath>
+    <!-- Web -->
+    <Browser>Chrome</Browser>
+    <Url>http://localhost:3000/</Url>
+    <UserName>admin</UserName>
+    <Password>admin</Password>
+    <CSV_Location>../ddt/users.csv</CSV_Location>
+    <ExecuteApplitools>yes</ExecuteApplitools> <!-- yes / no -->
+    <Applitools_key></Applitools_key>
+</Environment>
