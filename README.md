@@ -15,5 +15,6 @@ Prerequisites:
 To run the project, do the following:
 1. Run this command in the terminal: pip install -r requirements.txt
 2. Add the following folders: allure-results and allure-screen-shots
-3. Run the following comand from test_cases package: pytest -v -s .\test_web.py --alluredir="../allure-results/$(Get-Date -Format yyyy-MM-dd-HH-mm)"
-4. Run allure serve ../allure-results/[with current date] - for example: 2025-01-03-20-59
+3. Add Applitools API key to data file.
+4. Run the following comand from test_cases package: pytest -v -s .\test_web.py --alluredir="../allure-results/$(Get-Date -Format yyyy-MM-dd-HH-mm)"
+5. Run allure serve ../allure-results/[with current date] - for example: 2025-01-03-20-59
