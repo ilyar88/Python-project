@@ -1,7 +1,7 @@
 import allure
 import page_objects.web_objects.main_page as main
 import page_objects.web_objects.server_admin_page
-from extensions.ui_actions import UIActions
+from extensions.ui_actions import UiActions
 import utilities.manage_pages as page
 from extensions.verifications import Verifications
 from utilities.common_ops import wait, For, get_data, read_csv
@@ -9,11 +9,11 @@ class WebFlows:
     @staticmethod
     @allure.step('Login to Grafana flow')
     def login_flow(user: str, password: str):
-        UIActions.enter_text(page.web_login.get_user_name(), user)
-        UIActions.enter_text(page.web_login.get_password(), password)
-        UIActions.click(page.web_login.get_submit())
+        UiActions.enter_text(page.web_login.get_user_name(), user)
+        UiActions.enter_text(page.web_login.get_password(), password)
+        UiActions.click(page.web_login.get_submit())
         if page.web_login.get_skip():
-            UIActions.click(page.web_login.get_skip()[0])
+            UiActions.click(page.web_login.get_skip()[0])
 
     @staticmethod
     @allure.step('Verify grafana title flow')
@@ -51,16 +51,16 @@ class WebFlows:
     def open_users():
         elem1 = page.web_left_menu.get_server_admin()
         elem2 = page.web_server_admin_menu.get_users()
-        UIActions.mouse_hover(elem1, elem2)
+        UiActions.mouse_hover(elem1, elem2)
 
     @staticmethod
     @allure.step('Create new user flow')
     def create_user(name, email, password):
-        UIActions.click(page.web_server_admin.get_new_user())
-        UIActions.enter_text(page.web_server_admin_new_user.get_name(),name)
-        UIActions.enter_text(page.web_server_admin_new_user.get_email(), email)
-        UIActions.enter_text(page.web_server_admin_new_user.get_password(), password)
-        UIActions.click(page.web_server_admin_new_user.get_create_user())
+        UiActions.click(page.web_server_admin.get_new_user())
+        UiActions.enter_text(page.web_server_admin_new_user.get_name(), name)
+        UiActions.enter_text(page.web_server_admin_new_user.get_email(), email)
+        UiActions.enter_text(page.web_server_admin_new_user.get_password(), password)
+        UiActions.click(page.web_server_admin_new_user.get_create_user())
 
     @staticmethod
     @allure.step('Verify number of users in table flow')
@@ -72,16 +72,16 @@ class WebFlows:
     @staticmethod
     @allure.step('Search user from users table flow')
     def search_user(search_value):
-        UIActions.enter_text(page.web_server_admin.get_search(),search_value)
+        UiActions.enter_text(page.web_server_admin.get_search(), search_value)
     @staticmethod
     @allure.step('Delete user from users table flow')
     def delete_user(by, value):
         if by == 'user':
-            UIActions.click(page.web_server_admin.get_by_user_name(value))
+            UiActions.click(page.web_server_admin.get_by_user_name(value))
         elif by == 'index':
-            UIActions.click(page.web_server_admin.get_user_by_index(value))
-        UIActions.click(page.web_server_admin.get_delete())
-        UIActions.click(page.web_server_admin.get_confirm_delete())
+            UiActions.click(page.web_server_admin.get_user_by_index(value))
+        UiActions.click(page.web_server_admin.get_delete())
+        UiActions.click(page.web_server_admin.get_confirm_delete())
 
     @staticmethod
     @allure.step('Go to home flow')
