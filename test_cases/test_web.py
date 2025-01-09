@@ -4,7 +4,6 @@ from workflows.web_flows import WebFlows
 from utilities.common_ops import get_data, By
 import test_cases.conftest as conf
 
-
 @pytest.mark.usefixtures('init_web_driver')
 class Test_Web:
     @allure.title('Test01: verify login Grafana')
