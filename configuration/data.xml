@@ -9,6 +9,14 @@
     <UserName>admin</UserName>
     <Password>admin</Password>
     <CSV_Location>../ddt/users.csv</CSV_Location>
-    <ExecuteApplitools>yes</ExecuteApplitools> <!-- yes / no -->
-    <Applitools_key></Applitools_key>
+    <ExecuteApplitools>no</ExecuteApplitools> <!-- yes / no -->
+    <Applitools_key>pIVhrxCdYrdxuFQy5x43wu9Nk2JII111oXDicCaNTZ4Gs110</Applitools_key>
+    <!-- Mobile -->
+    <Mobile_device>Android</Mobile_device>
+    <Udid>81d15265</Udid>
+    <App_package>com.shivgadhia.android.ukMortgageCalc</App_package>
+    <App_activity>.MainActivity</App_activity>
+    <Bundle_id>com.shivgadhia.ukMortgageCalc</Bundle_id> #For running in IOS device
+    <Appium_server>http://localhost:4723/wd/hub</Appium_server>
+    <Swipe_duration>200</Swipe_duration>
 </Environment>
