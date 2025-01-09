@@ -2,7 +2,6 @@ import allure
 from selenium.webdriver.remote.webelement import WebElement
 from smart_assertions import soft_assert, verify_expectations
 
-
 class Verifications:
     @staticmethod
     @allure.step('Verify equals')
