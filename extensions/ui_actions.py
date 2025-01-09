@@ -2,7 +2,7 @@ import allure
 import test_cases.conftest as conf
 from selenium.webdriver.remote.webelement import WebElement
 
-class UIActions:
+class UiActions:
     @staticmethod
     @allure.step('Click on element')
     def click(elem: WebElement):
