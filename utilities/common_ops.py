@@ -37,3 +37,14 @@ class For(str, Enum):
 class By(str, Enum):
     USER = 'user'
     INDEX = 'index'
+
+#Enum for saving mortgage transaction or not
+class Saved():
+    Yes = True
+    No = False
+
+class Direction(str, Enum):
+    LEFT = 'left'
+    RIGHT = 'right'
+    DOWN = 'down'
+    UP = 'up'
