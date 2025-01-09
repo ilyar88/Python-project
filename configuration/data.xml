@@ -10,7 +10,7 @@
     <Password>admin</Password>
     <CSV_Location>../ddt/users.csv</CSV_Location>
     <ExecuteApplitools>no</ExecuteApplitools> <!-- yes / no -->
-    <Applitools_key>pIVhrxCdYrdxuFQy5x43wu9Nk2JII111oXDicCaNTZ4Gs110</Applitools_key>
+    <Applitools_key></Applitools_key>
     <!-- Mobile -->
     <Mobile_device>Android</Mobile_device>
     <Udid>81d15265</Udid>
