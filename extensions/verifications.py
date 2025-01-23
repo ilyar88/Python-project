@@ -9,6 +9,11 @@ class Verifications:
         assert actual == expected, 'Verify equals failed: ' + str(actual) + ' is not equals to: ' + str(expected)
 
     @staticmethod
+    @allure.step('Verify string in string')
+    def verify_string(actual, expected):
+        assert actual in expected, 'Verify equals failed: ' + str(actual) + ' is not in: ' + str(expected)
+
+    @staticmethod
     @allure.step('Verify element is displayed')
     def is_displayed(elem: WebElement):
         assert elem.is_displayed(), 'Verify is displayed failed, element: ' + elem.text + ' is not displayed'
