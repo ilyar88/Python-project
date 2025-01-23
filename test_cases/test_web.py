@@ -50,5 +50,6 @@ class Test_Web:
         conf.eyes.open(conf.driver,'Grafana testing user table','Verify Deleted User')
         WebFlows.open_users()
         conf.eyes.check_window('Users table')
+
     def teardown_method(self):
         WebFlows.grafana_home(self)
