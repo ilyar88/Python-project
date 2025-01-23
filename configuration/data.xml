@@ -2,21 +2,33 @@
 <Environment>
     <!-- General -->
     <WaitTime>10</WaitTime>
-    <ScreenShotPath>../allure-screen-shots/</ScreenShotPath>
-    <!-- Web -->
+    <ScreenShotPath>allure-screen-shots/</ScreenShotPath>
+    <!-- Web & API -->
     <Browser>Chrome</Browser>
-    <Url>http://localhost:3000/</Url>
+    <Url>http://localhost:3000</Url>
     <UserName>admin</UserName>
     <Password>admin</Password>
-    <CSV_Location>../ddt/users.csv</CSV_Location>
+    <CSV_Location>ddt/users.csv</CSV_Location>
     <ExecuteApplitools>no</ExecuteApplitools> <!-- yes / no -->
-    <Applitools_key></Applitools_key>
+    <Applitools_key>API-key</Applitools_key>
+    <Token>glsa_kcVxDhZtu5ISOZIEt</Token>
     <!-- Mobile -->
     <Mobile_device>Android</Mobile_device>
     <Udid>81d15265</Udid>
     <App_package>com.shivgadhia.android.ukMortgageCalc</App_package>
     <App_activity>.MainActivity</App_activity>
     <Bundle_id>com.shivgadhia.ukMortgageCalc</Bundle_id> #For running in IOS device
-    <Appium_server>http://localhost:4723/wd/hub</Appium_server>
+    <Appium_server>http://localhost:4720/wd/hub</Appium_server>
     <Swipe_duration>200</Swipe_duration>
+    <!-- Electron -->
+    <Electron_App>C:/Users/irahm/AppData/Local/Programs/todolist/Todolist.exe</Electron_App>
+    <Electron_Driver>D:/Programs/electrondriver-v3.1.2-win32-x64/electrondriver.exe</Electron_Driver>
+    <!-- Desktop -->
+    <Application_Name>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</Application_Name>
+    <WinAppDriver_Service>http://127.0.0.1:4723</WinAppDriver_Service>
+    <!-- Database -->
+    <DB_Host>localhost</DB_Host>
+    <DB_Name>classicmodels</DB_Name>
+    <DB_User>Ilya</DB_User>
+    <DB_Password>admin</DB_Password>
 </Environment>
