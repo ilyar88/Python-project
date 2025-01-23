@@ -1,5 +1,6 @@
 import os
 import allure
+import mysql.connector
 import pytest
 from applitools.selenium import Eyes
 from selenium import webdriver
@@ -7,6 +8,7 @@ import appium.webdriver
 from appium.webdriver.common.multi_action import MultiAction
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.common.action_chains import ActionChains
+
 #from selenium.webdriver.support.event_firing_webdriver import EventFiringWebDriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
@@ -20,6 +22,7 @@ action = None
 action2 = None #For using multiple actions
 m_action = None
 mobile_size = None
+db_connector = None
 eyes = Eyes()  # Applitools Eyes instance
 
 @pytest.fixture(scope='class')
@@ -85,6 +88,53 @@ def get_mobile_driver():
     else:
         raise ValueError(f"Wrong input, unrecognized  mobile OS.")
 
+@pytest.fixture(scope='class')
+def init_electron_driver(request):
+    globals()['driver'] = get_electron_driver()
+    driver = globals()['driver']
+    driver.implicitly_wait(int(get_data('WaitTime')))
+    request.cls.driver = driver
+    globals()['action'] = ActionChains(driver)
+    request.cls.action = globals()['action']
+    ManagePages.init_electron_pages()
+    yield
+    driver.quit()
+
+@pytest.fixture(scope='class')
+def init_desktop_driver(request):
+    globals()['driver'] = get_desktop_driver()
+    driver = globals()['driver']
+    driver.implicitly_wait(int(get_data('WaitTime')))
+    request.cls.driver = driver
+    ManagePages.init_desktop_pages()
+    yield
+    driver.quit()
+
+@pytest.fixture(scope='class')
+def init_db_connection(request):
+    db_connector = mysql.connector.connect(
+        host=get_data('DB_Host'),
+        database=get_data('DB_Name'),
+        user=get_data('DB_User'),
+        password=get_data('DB_Password')
+    )
+    globals()['db_connector'] = db_connector
+    request.cls.db_connector = db_connector
+    yield
+    db_connector.close()
+
+def get_electron_driver():
+    options = webdriver.ChromeOptions()
+    options.binary_location = get_data('Electron_App')
+    return webdriver.Chrome(chrome_options=options,executable_path=get_data('Electron_Driver'))
+
+def get_desktop_driver():
+    dc = {
+        'app': get_data('Application_Name'),
+        'platformName': 'Windows',
+        'deviceName': 'WindowsPC'
+    }
+    return appium.webdriver.Remote(get_data('WinAppDriver_Service'), dc)
 def get_android():
     dc = {
         'udid': get_data('Udid'),
@@ -92,8 +142,7 @@ def get_android():
         'appActivity': get_data('App_activity'),
         'platformName': 'android'
     }
-    android_driver = appium.webdriver.Remote(get_data('Appium_server'), dc)
-    return android_driver
+    return appium.webdriver.Remote(get_data('Appium_server'), dc)
 
 def get_ios():
     dc = {
@@ -101,8 +150,7 @@ def get_ios():
         'bundle_id': get_data('Bundle_id'),
         'platformName': 'ios'
     }
-    ios_driver = appium.webdriver.Remote(get_data('Appium_server'), dc)
-    return ios_driver
+    return appium.webdriver.Remote(get_data('Appium_server'), dc)
 
 # Catch exceptions and errors to take screenshots on failures
 def pytest_exception_interact(node, call, report):
