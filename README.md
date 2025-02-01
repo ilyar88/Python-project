@@ -35,7 +35,7 @@ The project is an example of infrastructure for automation testing of different 
 2. Add the following folders:
    - `allure-results`
    - `allure-screen-shots`
-3. Run the following command from the `test_cases` package:
+3. Run the following command from the `test_cases` package for example:
    ```bash
    pytest -v -s .\test_web.py --alluredir="../allure-results/$(Get-Date -Format yyyy-MM-dd-HH-mm)"
    ```
