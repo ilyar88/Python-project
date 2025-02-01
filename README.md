@@ -20,8 +20,11 @@ The project is an example of infrastructure for automation testing of different 
 
 ## Prerequisites
 
-1. Install [Grafana](https://grafana.com/grafana/download/8.3.3?platform=windows&edition=oss)
-2. Install [Allure Report](https://allurereport.org/docs/install-for-windows/)
+1. Install [Pycharm](https://www.jetbrains.com/pycharm/download/?section=windows)
+2. Install [Grafana](https://grafana.com/grafana/download/8.3.3?platform=windows&edition=oss)
+3. Install [Allure Report](https://allurereport.org/docs/install-for-windows/)
+4. Install [Grafana last version for running API automation](https://grafana.com/grafana/download?edition=oss)
+5. Run Grafana server from the installation folder.
 
 ## To Run the Project
 
