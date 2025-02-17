@@ -74,7 +74,7 @@ The project is an example of infrastructure for automation testing of different 
 - **Listeners** - Interface used to generate logs and `EventFiringWebDriver` module
 - **MySQL Free Online DB** - Used for login to Swag Labs web page and filling information in the Checkout page
 - **Jenkins** - For tests execution
-- **REST Assured** - For API testing
+- **REST API** - For API testing
 - **Allure Reports** - Main reporting system
 
 ---
