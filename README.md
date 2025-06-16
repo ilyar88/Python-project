@@ -64,7 +64,7 @@ The project is an example of infrastructure for automation testing of different 
 ## Applications Used
 
 - **Grafana** - Web-based Grafana site
-- **Metric Conversions** - Mobile application
+- **Mortgage Calculator app** - Mobile application
 - **Students.jar** - Test API (needs download)
 - **Electron application** - Todolist App application
 - **Desktop application** - Windows Calculator
